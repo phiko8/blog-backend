@@ -19,7 +19,7 @@ server.use(express.json());
 server.use(cors());
 
 // Connect to MongoDB
-mongoose.connect(process.env.DB_LOCATION, { autoIndex: true })
+mongoose.connect(process.env.MY_DB_LOCATION, { autoIndex: true })
   .then(async () => {
     console.log("Connected to MongoDB Atlas");
     await User.syncIndexes();
@@ -30,8 +30,8 @@ mongoose.connect(process.env.DB_LOCATION, { autoIndex: true })
 // AWS S3 setup
 const s3 = new aws.S3({
   region: "eu-north-1",
-  accessKeyId: process.env.AWS_ACCESS_KEY,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
+  accessKeyId: process.env.MY_AWS_ACCESS_KEY,
+  secretAccessKey: process.env.MY_AWS_SECRET_ACCESS_KEY
 });
 
 const generateUploadURL = async () => {

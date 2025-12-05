@@ -41,7 +41,7 @@ const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
 const s3 = new aws.S3({
   region: "eu-north-1",
   accessKeyId: process.env.MY_AWS_ACCESS_KEY,
-  secretAccessKey: process.env.MY_AWS_SECRET_ACCESS_KEY
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
 });
 
 const generateUploadURL = async () => {

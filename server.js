@@ -116,7 +116,7 @@ app.post('/signin', async (req, res) => {
     const { email, password } = req.body;
 
     const user = await User.findOne({ 'personal_info.email': email });
-    if (!user) return res.status(403).json({ error: 'Email not found' });
+    if (!user) return res.status(403).json({ error: 'Email not found please enter the valid email' });
 
     const isMatch = await bcrypt.compare(password, user.personal_info.password);
     if (!isMatch) return res.status(403).json({ error: 'Incorrect password' });

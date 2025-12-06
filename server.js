@@ -89,7 +89,7 @@ app.post('/signup', async (req, res) => {
 
     if (fullname.length < 3) return res.status(400).json({ error: 'Full name too short' });
     if (!emailRegex.test(email)) return res.status(400).json({ error: 'Invalid email' });
-    if (!passwordRegex.test(password)) return res.status(400).json({ error: 'Weak password' });
+    if (!passwordRegex.test(password)) return res.status(400).json({ error: 'Weak password enter password with strength' });
 
     const existingUser = await User.findOne({ 'personal_info.email': email });
     if (existingUser) return res.status(409).json({ error: 'Email already exists' });

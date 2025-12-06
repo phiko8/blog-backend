@@ -110,7 +110,7 @@ server.post("/signin", async (req, res) => {
     if (!user) return res.status(403).json({ error: "Email not found" });
 
     const isMatch = await bcrypt.compare(password, user.personal_info.password);
-    if (!isMatch) return res.status(403).json({ error: "Incorrect password" });
+    if (!isMatch) return res.status(403).json({ error: "Incorrect password please enter a correct password" });
 
     return res.status(200).json(formatDataToSend(user));
 

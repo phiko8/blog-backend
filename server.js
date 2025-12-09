@@ -7,7 +7,7 @@ import cors from 'cors';
 import aws from "aws-sdk";
 
 import User from './Schema/User.js';
-import Blog from './Schema/blog.js';
+import Blog from './Schema/Blog.js';
 
 const server = express();
 const PORT = process.env.PORT || 3000;

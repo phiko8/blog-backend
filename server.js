@@ -19,7 +19,7 @@ server.use(express.json());
 server.use(cors());
 
 // Connect to MongoDB
-mongoose.connect(process.env.MY_DB_LOCATION, { autoIndex: true })
+mongoose.connect(process.env.DB_LOCATION, { autoIndex: true })
   .then(async () => {
     console.log("Connected to MongoDB Atlas");
     await User.syncIndexes();

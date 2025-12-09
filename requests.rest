@@ -1,3 +1,0 @@
-//"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MWMzMDhiZTY3NTI3YjE5OTM0OTFiNiIsImlhdCI6MTc2MzQ1NTExNX0.UHo8jNmxS8-iL7dapWdzslRmlmnIwayZYr9XuzjNADU"
-
-GET http://localhost:3000/latest-blogs

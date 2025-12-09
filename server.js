@@ -7,7 +7,7 @@ import cors from 'cors';
 import aws from "aws-sdk";
 
 import User from './Schema/User.js';
-import Blog from './Schema/Blog.js';
+import Blog from './Schema/blog.js';
 
 const server = express();
 const PORT = process.env.PORT || 3000;
@@ -110,7 +110,7 @@ server.post("/signin", async (req, res) => {
     if (!user) return res.status(403).json({ error: "Email not found" });
 
     const isMatch = await bcrypt.compare(password, user.personal_info.password);
-    if (!isMatch) return res.status(403).json({ error: "Incorrect password please enter a correct password" });
+    if (!isMatch) return res.status(403).json({ error: "Incorrect password" });
 
     return res.status(200).json(formatDataToSend(user));
 
